@@ -170,30 +170,17 @@ class Resource {
 				throw new Exception( 'Unsupported PDO driver' );
 		}
 		foreach( $sql as $q )
-		$pdo->exec( $q );
+			$pdo->exec( $q );
 	}
 	
 }
 
 
-/* MYSQL
-$pdo = new PDO(
-	'mysql:host=localhost;dbname=noop_cms;charset=utf8',
-	'test',
-	'test'
-);
-//*/
+//$pdo = new PDO( 'mysql:host=localhost;dbname=noop_cms;charset=utf8','test','test' );
+//$pdo = new PDO( 'sqlite:'.__DIR__.'/db.sqlite' );
 
-/* SQLITE
-try {
-	$path = __DIR__.'/db.sqlite';
-	$pdo = new PDO('sqlite:'.$path);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-	die('Erreur : '.$e->getMessage());
-}
-//*/
+//$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //Resource::createTables( $pdo );
 
